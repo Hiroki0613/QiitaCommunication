@@ -16,6 +16,7 @@
 		7FAB118623FAC4F50075FD58 /* QTTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB118523FAC4F50075FD58 /* QTTitleLabel.swift */; };
 		7FAB118823FAC8A60075FD58 /* QTBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB118723FAC8A60075FD58 /* QTBodyLabel.swift */; };
 		7FAB118B23FACA930075FD58 /* QTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB118A23FACA930075FD58 /* QTButton.swift */; };
+		7FAB118E23FACBA20075FD58 /* QTTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB118D23FACBA20075FD58 /* QTTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		7FAB118523FAC4F50075FD58 /* QTTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTTitleLabel.swift; sourceTree = "<group>"; };
 		7FAB118723FAC8A60075FD58 /* QTBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTBodyLabel.swift; sourceTree = "<group>"; };
 		7FAB118A23FACA930075FD58 /* QTButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTButton.swift; sourceTree = "<group>"; };
+		7FAB118D23FACBA20075FD58 /* QTTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 		7FAB117F23FAC2B80075FD58 /* UIParts */ = {
 			isa = PBXGroup;
 			children = (
+				7FAB118C23FACB870075FD58 /* TextFields */,
 				7FAB118923FACA7F0075FD58 /* Button */,
 				7FAB118423FAC47C0075FD58 /* Labels */,
 				7FAB118023FAC2DC0075FD58 /* ImageViews */,
@@ -122,6 +125,14 @@
 				7FAB118A23FACA930075FD58 /* QTButton.swift */,
 			);
 			path = Button;
+			sourceTree = "<group>";
+		};
+		7FAB118C23FACB870075FD58 /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				7FAB118D23FACBA20075FD58 /* QTTextField.swift */,
+			);
+			path = TextFields;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +207,7 @@
 			files = (
 				7FAB116723FABBB70075FD58 /* AppDelegate.swift in Sources */,
 				7FAB117B23FABD540075FD58 /* SearchFollowerVC.swift in Sources */,
+				7FAB118E23FACBA20075FD58 /* QTTextField.swift in Sources */,
 				7FAB118623FAC4F50075FD58 /* QTTitleLabel.swift in Sources */,
 				7FAB116923FABBB70075FD58 /* SceneDelegate.swift in Sources */,
 				7FAB117D23FABD910075FD58 /* FavoriteVC.swift in Sources */,

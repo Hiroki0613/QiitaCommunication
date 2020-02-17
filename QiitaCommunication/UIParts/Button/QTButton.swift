@@ -11,6 +11,7 @@ import UIKit
 class QTButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
+        configure()
     }
     
     required init?(coder: NSCoder) {
@@ -23,6 +24,7 @@ class QTButton: UIButton {
         super.init(frame: .zero)
         self.backgroundColor = backgroundColor
         self.setTitle(title, for: .normal)
+        configure()
     }
     
     //決定しているプロパティ
