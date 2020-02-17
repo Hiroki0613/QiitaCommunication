@@ -56,15 +56,47 @@
 		7FAB116523FABBB70075FD58 /* QiitaCommunication */ = {
 			isa = PBXGroup;
 			children = (
-				7FAB116623FABBB70075FD58 /* AppDelegate.swift */,
-				7FAB116823FABBB70075FD58 /* SceneDelegate.swift */,
-				7FAB116F23FABBB90075FD58 /* Assets.xcassets */,
-				7FAB117123FABBB90075FD58 /* LaunchScreen.storyboard */,
+				7FAB117E23FAC29B0075FD58 /* Screen */,
+				7FAB117F23FAC2B80075FD58 /* UIParts */,
+				7FAB118123FAC2F90075FD58 /* Support */,
 				7FAB117423FABBB90075FD58 /* Info.plist */,
+			);
+			path = QiitaCommunication;
+			sourceTree = "<group>";
+		};
+		7FAB117E23FAC29B0075FD58 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
 				7FAB117A23FABD540075FD58 /* SearchFollowerVC.swift */,
 				7FAB117C23FABD910075FD58 /* FavoriteVC.swift */,
 			);
-			path = QiitaCommunication;
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		7FAB117F23FAC2B80075FD58 /* UIParts */ = {
+			isa = PBXGroup;
+			children = (
+				7FAB118023FAC2DC0075FD58 /* ImageViews */,
+			);
+			path = UIParts;
+			sourceTree = "<group>";
+		};
+		7FAB118023FAC2DC0075FD58 /* ImageViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ImageViews;
+			sourceTree = "<group>";
+		};
+		7FAB118123FAC2F90075FD58 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				7FAB117123FABBB90075FD58 /* LaunchScreen.storyboard */,
+				7FAB116F23FABBB90075FD58 /* Assets.xcassets */,
+				7FAB116823FABBB70075FD58 /* SceneDelegate.swift */,
+				7FAB116623FABBB70075FD58 /* AppDelegate.swift */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
