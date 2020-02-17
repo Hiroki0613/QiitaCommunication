@@ -40,6 +40,6 @@ class QTTextField: UITextField {
         //自動補完をカット
         autocorrectionType = .no
         returnKeyType = .go
-        placeholder = "検索したい名前を記入してください"
+        placeholder = "名前を記入してください"
     }
 }

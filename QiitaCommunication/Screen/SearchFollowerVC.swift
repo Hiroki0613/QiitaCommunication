@@ -15,12 +15,17 @@ class SearchFollowerVC: UIViewController {
     let usernameTextField = QTTextField()
     let callToActionButton = QTButton(backgroundColor: .systemBlue, title: "フォロワーの検索")
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        //ダークモード対応
         view.backgroundColor = .systemBackground
         configureLogoImageView()
         configureLogoImageLabel()
+        configureTextField()
+        configureCallToActionButton()
     }
+    
     
     //ロゴのイメージの設置場所
     func configureLogoImageView() {
@@ -49,5 +54,33 @@ class SearchFollowerVC: UIViewController {
             logoImageLabel.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
+    
+    //フォロワーを検索するTextField
+    func configureTextField() {
+        view.addSubview(usernameTextField)
+        
+        NSLayoutConstraint.activate([
+            usernameTextField.topAnchor.constraint(equalTo: logoImageLabel.bottomAnchor, constant: 20),
+            usernameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            usernameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            usernameTextField.heightAnchor.constraint(equalToConstant: 50)
+        ])
+    }
+    
+    
+    //FollowerListVCへ移動するボタン
+    func configureCallToActionButton(){
+          view.addSubview(callToActionButton)
+          
+          NSLayoutConstraint.activate([
+              callToActionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
+              callToActionButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+              callToActionButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+              callToActionButton.heightAnchor.constraint(equalToConstant: 50)
+          ])
+      }
+
+    
+
 
 }
