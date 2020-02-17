@@ -10,6 +10,11 @@ import UIKit
 
 class SearchFollowerVC: UIViewController {
 
+    let logoImageView = UIImageView()
+    let logoImageLabel = QTBodyLabel(textAlignment: .center)
+    let usernameTextField = QTTextField()
+    let callToActionButton = QTButton(backgroundColor: .systemBlue, title: "フォロワーの検索")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemRed
