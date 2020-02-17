@@ -11,7 +11,7 @@ import UIKit
 class SearchFollowerVC: UIViewController {
 
     let logoImageView = UIImageView()
-    let logoImageLabel = QTBodyLabel(textAlignment: .center)
+    let logoImageLabel = QTTitleLabel(textAlignment: .center, fontSize: 20)
     let usernameTextField = QTTextField()
     let callToActionButton = QTButton(backgroundColor: .systemBlue, title: "フォロワーの検索")
     
@@ -19,6 +19,7 @@ class SearchFollowerVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         configureLogoImageView()
+        configureLogoImageLabel()
     }
     
     //ロゴのイメージの設置場所
@@ -35,5 +36,18 @@ class SearchFollowerVC: UIViewController {
         ])
     }
 
+    //ロゴの下に記載するコピー
+    func configureLogoImageLabel() {
+        view.addSubview(logoImageLabel)
+        logoImageLabel.translatesAutoresizingMaskIntoConstraints = false
+        logoImageLabel.text = "さあ、Followerを検索してみよう"
+        
+        NSLayoutConstraint.activate([
+            logoImageLabel.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 20),
+            logoImageLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            logoImageLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            logoImageLabel.heightAnchor.constraint(equalToConstant: 50)
+        ])
+    }
 
 }
