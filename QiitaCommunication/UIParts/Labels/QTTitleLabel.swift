@@ -11,6 +11,7 @@ import UIKit
 class QTTitleLabel: UILabel {
     override init(frame: CGRect) {
         super.init(frame: frame)
+        configure()
     }
     
     required init?(coder: NSCoder) {
@@ -22,6 +23,7 @@ class QTTitleLabel: UILabel {
         super.init(frame: .zero)
         self.textAlignment = textAlignment
         self.font = UIFont.systemFont(ofSize: fontSize, weight: .bold)
+        configure()
     }
     
     //決定しているプロパティ
