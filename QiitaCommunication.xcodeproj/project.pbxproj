@@ -12,6 +12,8 @@
 		7FAB116B23FABBB70075FD58 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB116A23FABBB70075FD58 /* ViewController.swift */; };
 		7FAB117023FABBB90075FD58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FAB116F23FABBB90075FD58 /* Assets.xcassets */; };
 		7FAB117323FABBB90075FD58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FAB117123FABBB90075FD58 /* LaunchScreen.storyboard */; };
+		7FAB117B23FABD540075FD58 /* SearchFollowerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB117A23FABD540075FD58 /* SearchFollowerVC.swift */; };
+		7FAB117D23FABD910075FD58 /* FavoriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB117C23FABD910075FD58 /* FavoriteVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		7FAB116F23FABBB90075FD58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7FAB117223FABBB90075FD58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7FAB117423FABBB90075FD58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7FAB117A23FABD540075FD58 /* SearchFollowerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFollowerVC.swift; sourceTree = "<group>"; };
+		7FAB117C23FABD910075FD58 /* FavoriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				7FAB116F23FABBB90075FD58 /* Assets.xcassets */,
 				7FAB117123FABBB90075FD58 /* LaunchScreen.storyboard */,
 				7FAB117423FABBB90075FD58 /* Info.plist */,
+				7FAB117A23FABD540075FD58 /* SearchFollowerVC.swift */,
+				7FAB117C23FABD910075FD58 /* FavoriteVC.swift */,
 			);
 			path = QiitaCommunication;
 			sourceTree = "<group>";
@@ -136,7 +142,9 @@
 			files = (
 				7FAB116B23FABBB70075FD58 /* ViewController.swift in Sources */,
 				7FAB116723FABBB70075FD58 /* AppDelegate.swift in Sources */,
+				7FAB117B23FABD540075FD58 /* SearchFollowerVC.swift in Sources */,
 				7FAB116923FABBB70075FD58 /* SceneDelegate.swift in Sources */,
+				7FAB117D23FABD910075FD58 /* FavoriteVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
