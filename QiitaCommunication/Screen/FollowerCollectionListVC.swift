@@ -9,11 +9,14 @@
 import UIKit
 
 class FollowerCollectionListVC: UIViewController {
+    
+    var userName: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .systemPink
+        print(userName)
     }
     
 
