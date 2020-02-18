@@ -21,6 +21,9 @@ class QTAlertVC: UIViewController {
     var message: String?
     var buttonTitle: String?
     
+    //共通のpadding値を宣言
+    var padding:CGFloat = 20
+    
     init(title: String, message: String, buttonTitle: String) {
         super.init(nibName: nil, bundle: nil)
         self.alertTitle = title
@@ -53,6 +56,18 @@ class QTAlertVC: UIViewController {
             containerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             containerView.widthAnchor.constraint(equalToConstant: 280),
             containerView.heightAnchor.constraint(equalToConstant: 220)
+        ])
+    }
+    
+    func configureTitleLabel() {
+        containerView.addSubview(titleLabel)
+        titleLabel.text = alertTitle ?? "情報無し"
+        
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: padding),
+            titleLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: padding),
+            titleLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -padding),
+            titleLabel.heightAnchor.constraint(equalToConstant: 30)
         ])
     }
     
