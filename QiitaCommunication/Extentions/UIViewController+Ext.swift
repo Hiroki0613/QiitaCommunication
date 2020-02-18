@@ -8,3 +8,14 @@
 
 import UIKit
 
+extension UIViewController {
+    
+    func presentQTAlertOnMainView(title: String,message: String, buttonTitle: String) {
+        let alertVC = QTAlertVC(title: title, message: message, buttonTitle: buttonTitle)
+    
+        //アラートを画面全体にクロスディゾルブでポップアップして出す。
+        alertVC.modalPresentationStyle = .overFullScreen
+        alertVC.modalTransitionStyle = .crossDissolve
+        self.present(alertVC, animated: true, completion: nil)
+    }
+}
