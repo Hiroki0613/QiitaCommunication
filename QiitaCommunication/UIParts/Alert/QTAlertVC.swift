@@ -79,7 +79,7 @@ class QTAlertVC: UIViewController {
         messageLabel.numberOfLines = 3
         
         NSLayoutConstraint.activate([
-            messageLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
+            messageLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 30),
             messageLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: padding),
             messageLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -padding),
             messageLabel.heightAnchor.constraint(equalToConstant: 30)
