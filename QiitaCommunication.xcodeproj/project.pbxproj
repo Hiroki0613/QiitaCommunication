@@ -18,6 +18,7 @@
 		7FAB118B23FACA930075FD58 /* QTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB118A23FACA930075FD58 /* QTButton.swift */; };
 		7FAB118E23FACBA20075FD58 /* QTTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB118D23FACBA20075FD58 /* QTTextField.swift */; };
 		7FAB119023FB8D7F0075FD58 /* FollowerCollectionListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB118F23FB8D7F0075FD58 /* FollowerCollectionListVC.swift */; };
+		7FAB119323FB8F930075FD58 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB119223FB8F930075FD58 /* UIViewController+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		7FAB118A23FACA930075FD58 /* QTButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTButton.swift; sourceTree = "<group>"; };
 		7FAB118D23FACBA20075FD58 /* QTTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTTextField.swift; sourceTree = "<group>"; };
 		7FAB118F23FB8D7F0075FD58 /* FollowerCollectionListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCollectionListVC.swift; sourceTree = "<group>"; };
+		7FAB119223FB8F930075FD58 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 		7FAB116523FABBB70075FD58 /* QiitaCommunication */ = {
 			isa = PBXGroup;
 			children = (
+				7FAB119123FB8F6F0075FD58 /* Extentions */,
 				7FAB117E23FAC29B0075FD58 /* Screen */,
 				7FAB117F23FAC2B80075FD58 /* UIParts */,
 				7FAB118123FAC2F90075FD58 /* Support */,
@@ -136,6 +139,14 @@
 				7FAB118D23FACBA20075FD58 /* QTTextField.swift */,
 			);
 			path = TextFields;
+			sourceTree = "<group>";
+		};
+		7FAB119123FB8F6F0075FD58 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				7FAB119223FB8F930075FD58 /* UIViewController+Ext.swift */,
+			);
+			path = Extentions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +221,7 @@
 			files = (
 				7FAB116723FABBB70075FD58 /* AppDelegate.swift in Sources */,
 				7FAB117B23FABD540075FD58 /* SearchFollowerVC.swift in Sources */,
+				7FAB119323FB8F930075FD58 /* UIViewController+Ext.swift in Sources */,
 				7FAB118E23FACBA20075FD58 /* QTTextField.swift in Sources */,
 				7FAB118623FAC4F50075FD58 /* QTTitleLabel.swift in Sources */,
 				7FAB119023FB8D7F0075FD58 /* FollowerCollectionListVC.swift in Sources */,
