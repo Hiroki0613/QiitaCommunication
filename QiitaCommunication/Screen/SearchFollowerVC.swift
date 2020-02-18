@@ -15,6 +15,9 @@ class SearchFollowerVC: UIViewController {
     let usernameTextField = QTTextField()
     let callToActionButton = QTButton(backgroundColor: .systemBlue, title: "フォロワーの検索")
     
+    //usernameが入力されている場合はtrueになる
+    var isUsernameEntered: Bool { return !usernameTextField.text!.isEmpty }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,6 +86,11 @@ class SearchFollowerVC: UIViewController {
 
     @objc func pushFollowerCollectionListVC () {
         
+        //画面遷移する前にtextFieldに文章が入っていない場合はアラートを出して次に進めないようにする
+        guard isUsernameEntered else {
+            presentQTAlertOnMainView(title: "", message: "", buttonTitle: "OK")
+            return
+        }
         let followerCollectionlistVC = FollowerCollectionListVC()
         navigationController?.pushViewController(followerCollectionlistVC, animated: true)
     }

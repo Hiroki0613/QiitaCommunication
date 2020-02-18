@@ -70,7 +70,7 @@
 		7FAB116523FABBB70075FD58 /* QiitaCommunication */ = {
 			isa = PBXGroup;
 			children = (
-				7FAB119123FB8F6F0075FD58 /* Extentions */,
+				7FAB119123FB8F6F0075FD58 /* Extensions */,
 				7FAB117E23FAC29B0075FD58 /* Screen */,
 				7FAB117F23FAC2B80075FD58 /* UIParts */,
 				7FAB118123FAC2F90075FD58 /* Support */,
@@ -144,12 +144,12 @@
 			path = TextFields;
 			sourceTree = "<group>";
 		};
-		7FAB119123FB8F6F0075FD58 /* Extentions */ = {
+		7FAB119123FB8F6F0075FD58 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				7FAB119223FB8F930075FD58 /* UIViewController+Ext.swift */,
 			);
-			path = Extentions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		7FAB119423FB90BE0075FD58 /* Alert */ = {
