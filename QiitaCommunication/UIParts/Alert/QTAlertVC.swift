@@ -13,7 +13,7 @@ class QTAlertVC: UIViewController {
     let containerView = UIView()
     let titleLabel = QTTitleLabel(textAlignment: .center, fontSize: 24)
     let messageLabel = QTBodyLabel(textAlignment: .center)
-    let actionButton = QTButton(backgroundColor: .systemRed, title: "戻る")
+    let actionButton = QTButton(backgroundColor: .systemPink, title: "戻る")
     
     
     //initで定義される内容を宣言、情報が入らない場合を想定してオプショナル型で宣言
