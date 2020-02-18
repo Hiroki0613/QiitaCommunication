@@ -21,6 +21,8 @@ class FollowerCollectionListVC: UIViewController {
     
     //初期のフォロワー情報を取得するページを1と宣言
     var page = 1
+    //パージする時に100個以上の情報があるかどうかを確認
+    var hasMoreFollowers = true
     
     var qtCollectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<Section, Follower>!
@@ -67,12 +69,17 @@ class FollowerCollectionListVC: UIViewController {
     }
     
     func getFollowers(username: String,page: Int) {
-        NetworkManager.shared.getFollowers(for: userName, page: 1) { (followers, errorMessage) in
+        NetworkManager.shared.getFollowers(for: userName, page: page) { (followers, errorMessage) in
             guard let followers = followers else {
                 self.presentQTAlertOnMainView(title: "ユーザー名が無効です", message: errorMessage!.rawValue, buttonTitle: "OK")
                 return
             }
-            self.followers = followers
+            
+            if followers.count < 100 {
+                self.hasMoreFollowers = false
+            }
+            
+            self.followers.append(contentsOf: followers)
             self.initDataSource()
 
         }
@@ -113,6 +120,7 @@ extension FollowerCollectionListVC: UICollectionViewDelegate {
         let height = scrollView.frame.size.height
         
         if offsetY > contentHeight - height {
+            guard hasMoreFollowers else { return }
             page = page + 1
             getFollowers(username: userName, page: page)
         }
