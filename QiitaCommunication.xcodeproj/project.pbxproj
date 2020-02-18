@@ -20,6 +20,7 @@
 		7FAB119023FB8D7F0075FD58 /* FollowerCollectionListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB118F23FB8D7F0075FD58 /* FollowerCollectionListVC.swift */; };
 		7FAB119323FB8F930075FD58 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB119223FB8F930075FD58 /* UIViewController+Ext.swift */; };
 		7FAB119723FB90ED0075FD58 /* QTAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB119623FB90ED0075FD58 /* QTAlertVC.swift */; };
+		7FAB119A23FBA0540075FD58 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB119923FBA0540075FD58 /* Follower.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		7FAB118F23FB8D7F0075FD58 /* FollowerCollectionListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCollectionListVC.swift; sourceTree = "<group>"; };
 		7FAB119223FB8F930075FD58 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		7FAB119623FB90ED0075FD58 /* QTAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTAlertVC.swift; sourceTree = "<group>"; };
+		7FAB119923FBA0540075FD58 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 		7FAB116523FABBB70075FD58 /* QiitaCommunication */ = {
 			isa = PBXGroup;
 			children = (
+				7FAB119823FB9FD70075FD58 /* Model */,
 				7FAB119123FB8F6F0075FD58 /* Extensions */,
 				7FAB117E23FAC29B0075FD58 /* Screen */,
 				7FAB117F23FAC2B80075FD58 /* UIParts */,
@@ -160,6 +163,14 @@
 			path = Alert;
 			sourceTree = "<group>";
 		};
+		7FAB119823FB9FD70075FD58 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7FAB119923FBA0540075FD58 /* Follower.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -237,6 +248,7 @@
 				7FAB118E23FACBA20075FD58 /* QTTextField.swift in Sources */,
 				7FAB118623FAC4F50075FD58 /* QTTitleLabel.swift in Sources */,
 				7FAB119023FB8D7F0075FD58 /* FollowerCollectionListVC.swift in Sources */,
+				7FAB119A23FBA0540075FD58 /* Follower.swift in Sources */,
 				7FAB116923FABBB70075FD58 /* SceneDelegate.swift in Sources */,
 				7FAB117D23FABD910075FD58 /* FavoriteVC.swift in Sources */,
 				7FAB118823FAC8A60075FD58 /* QTBodyLabel.swift in Sources */,
