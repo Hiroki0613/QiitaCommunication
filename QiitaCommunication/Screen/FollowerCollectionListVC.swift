@@ -14,8 +14,17 @@ class FollowerCollectionListVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NetworkManager.shared.getFollowers(for: userName, page: 1) { (followers, errorMessage) in
+            guard let followers = followers else {
+                self.presentQTAlertOnMainView(title: "何かエラーが発生しています", message: errorMessage!, buttonTitle: "OK")
+                return
+            }
+            
+            print("フォロワーの数 = \(followers.count)")
+            print(followers)
+        }
 
-        view.backgroundColor = .systemPink
     }
     
     //ナビゲーションバーを表示
