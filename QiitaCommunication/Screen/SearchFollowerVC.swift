@@ -71,6 +71,7 @@ class SearchFollowerVC: UIViewController {
     //FollowerListVCへ移動するボタン
     func configureCallToActionButton(){
           view.addSubview(callToActionButton)
+        callToActionButton.addTarget(self, action: #selector(pushFollowerCollectionListVC), for: .touchUpInside)
           
           NSLayoutConstraint.activate([
               callToActionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
@@ -80,6 +81,11 @@ class SearchFollowerVC: UIViewController {
           ])
       }
 
+    @objc func pushFollowerCollectionListVC () {
+        
+        let followerCollectionlistVC = FollowerCollectionListVC()
+        navigationController?.pushViewController(followerCollectionlistVC, animated: true)
+    }
     
 
 
