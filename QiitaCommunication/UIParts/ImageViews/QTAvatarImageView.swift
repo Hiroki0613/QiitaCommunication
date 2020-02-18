@@ -30,4 +30,23 @@ class QTAvatarImageView: UIImageView {
         image = placeholderImage
         translatesAutoresizingMaskIntoConstraints = false
     }
+    
+    
+    //アバターのimage画像を取得
+    func downLoadImage(from urlString: String) {
+        guard let url = URL(string: urlString) else { return }
+        
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let _ = error { return }
+            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else { return }
+            guard let data = data else { return }
+            
+            guard let image = UIImage(data: data) else { return }
+            
+            DispatchQueue.main.async {
+                self.image = image
+            }
+        }
+        task.resume()
+    }
 }
