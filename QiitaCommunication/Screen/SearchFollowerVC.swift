@@ -88,7 +88,7 @@ class SearchFollowerVC: UIViewController {
         
         //画面遷移する前にtextFieldに文章が入っていない場合はアラートを出して次に進めないようにする
         guard isUsernameEntered else {
-            presentQTAlertOnMainView(title: "", message: "", buttonTitle: "OK")
+            presentQTAlertOnMainView(title: "名前が空欄です", message: "", buttonTitle: "OK")
             return
         }
         let followerCollectionlistVC = FollowerCollectionListVC()

@@ -12,7 +12,7 @@ class QTAlertVC: UIViewController {
 
     //アラートを載せるviewを宣言
     let containerView = UIView()
-    let titleLabel = QTTitleLabel(textAlignment: .center, fontSize: 30)
+    let titleLabel = QTTitleLabel(textAlignment: .center, fontSize: 24)
     let messageLabel = QTBodyLabel(textAlignment: .center)
     let actionButton = QTButton(backgroundColor: .systemRed, title: "戻る")
     
@@ -40,6 +40,7 @@ class QTAlertVC: UIViewController {
         //アラートを画面全体に暗めの透過背景にてポップアップして出す。
         view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.77)
         configureContainerView()
+        configureTitleLabel()
     }
     
     func configureContainerView() {
