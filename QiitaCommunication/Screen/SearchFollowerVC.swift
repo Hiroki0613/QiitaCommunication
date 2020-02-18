@@ -27,12 +27,19 @@ class SearchFollowerVC: UIViewController {
         configureLogoImageLabel()
         configureTextField()
         configureCallToActionButton()
+        createDissmissKeyboardTapGesture()
     }
     
     //ナビゲーションバーを消去
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    //キーボードの入力時、キーボード外を押した時に入力画面を消す
+    func createDissmissKeyboardTapGesture() {
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
     }
     
     
