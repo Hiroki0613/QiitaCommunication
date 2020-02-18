@@ -9,7 +9,9 @@
 import UIKit
 
 class QTAvatarImageView: UIImageView {
-
+    
+    //キャッシュを宣言
+    let cache = NetworkManager.shared.cache
     //プレースホルダーを宣言
     let placeholderImage = UIImage(named: "avatar-placeholder")!
     
@@ -34,6 +36,16 @@ class QTAvatarImageView: UIImageView {
     
     //アバターのimage画像を取得
     func downLoadImage(from urlString: String) {
+        
+        //cacheはNSStringしか使えないので、Stringを変換
+        let cacheKey = NSString(string: urlString)
+        
+        //キャッシュされていないイメージが、ある場合のみ次の処理へ進む
+        if let image = cache.object(forKey: cacheKey) {
+            self.image = image
+            return
+        }
+        
         guard let url = URL(string: urlString) else { return }
         
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -42,6 +54,8 @@ class QTAvatarImageView: UIImageView {
             guard let data = data else { return }
             
             guard let image = UIImage(data: data) else { return }
+            //キャッシュされてイメージをセットする
+            self.cache.setObject(image, forKey: cacheKey)
             
             DispatchQueue.main.async {
                 self.image = image

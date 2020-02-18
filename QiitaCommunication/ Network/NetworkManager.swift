@@ -12,6 +12,8 @@ class NetworkManager {
     //シングルトン
     static let shared = NetworkManager()
     private let baseURL = "https://qiita.com/api/v2/users/"
+    //キャッシュを宣言
+    let cache = NSCache<NSString, UIImage>()
     
     private init(){}
     

@@ -15,8 +15,12 @@ class FollowerCollectionListVC: UIViewController {
         case main
     }
     
+    //userNameはSearchFollowerVCから受け取る
     var userName: String!
     var followers: [Follower] = []
+    
+    //初期のフォロワー情報を取得するページを1と宣言
+    var page = 1
     
     var qtCollectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<Section, Follower>!
@@ -26,7 +30,7 @@ class FollowerCollectionListVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         configureCollectionView()
-        getFollowers()
+        getFollowers(username: userName, page: page)
         configureDataSource()
     }
     
@@ -41,6 +45,7 @@ class FollowerCollectionListVC: UIViewController {
     func configureCollectionView() {
         qtCollectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createThreeColumnFlowLayout())
         view.addSubview(qtCollectionView)
+        qtCollectionView.delegate = self
         qtCollectionView.backgroundColor = .systemBackground
         qtCollectionView.register(QTFollowerCell.self, forCellWithReuseIdentifier: QTFollowerCell.reuseID)
     }
@@ -61,7 +66,7 @@ class FollowerCollectionListVC: UIViewController {
         return flowLayout
     }
     
-    func getFollowers() {
+    func getFollowers(username: String,page: Int) {
         NetworkManager.shared.getFollowers(for: userName, page: 1) { (followers, errorMessage) in
             guard let followers = followers else {
                 self.presentQTAlertOnMainView(title: "ユーザー名が無効です", message: errorMessage!.rawValue, buttonTitle: "OK")
@@ -92,6 +97,24 @@ class FollowerCollectionListVC: UIViewController {
         /// データを反映
         DispatchQueue.main.async {
             self.dataSource.apply(snapshot, animatingDifferences: true, completion: nil)
+        }
+    }
+}
+
+extension FollowerCollectionListVC: UICollectionViewDelegate {
+    
+    //スクロールビューで一番下に達した時に、次の100個のフォロワーを呼び出す
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        //どれぐれいスクロールダウン出来るかの高さ
+        let offsetY = scrollView.contentOffset.y
+        //100人のフォロワーをスクロールする高さ
+        let contentHeight = scrollView.contentSize.height
+        //該当のiPhoneの高さ
+        let height = scrollView.frame.size.height
+        
+        if offsetY > contentHeight - height {
+            page = page + 1
+            getFollowers(username: userName, page: page)
         }
     }
 }
