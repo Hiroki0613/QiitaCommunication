@@ -1,5 +1,5 @@
 //
-//  NetworkManager.swift
+//  ErrorMessage.swift
 //  QiitaCommunication
 //
 //  Created by 近藤宏輝 on 2020/02/18.
