@@ -29,6 +29,12 @@ class SearchFollowerVC: UIViewController {
         configureCallToActionButton()
     }
     
+    //ナビゲーションバーを消去
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
     
     //ロゴのイメージの設置場所
     func configureLogoImageView() {
@@ -92,7 +98,8 @@ class SearchFollowerVC: UIViewController {
             return
         }
         let followerCollectionlistVC = FollowerCollectionListVC()
-        followerCollectionlistVC.userName = usernameTextField.text!
+        followerCollectionlistVC.userName = usernameTextField.text
+        followerCollectionlistVC.title = usernameTextField.text
         navigationController?.pushViewController(followerCollectionlistVC, animated: true)
     }
     
