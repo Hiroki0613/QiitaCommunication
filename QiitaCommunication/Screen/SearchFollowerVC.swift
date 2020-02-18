@@ -74,6 +74,7 @@ class SearchFollowerVC: UIViewController {
     //フォロワーを検索するTextField
     func configureTextField() {
         view.addSubview(usernameTextField)
+        usernameTextField.delegate = self
         
         NSLayoutConstraint.activate([
             usernameTextField.topAnchor.constraint(equalTo: logoImageLabel.bottomAnchor, constant: 20),
@@ -109,7 +110,12 @@ class SearchFollowerVC: UIViewController {
         followerCollectionlistVC.title = usernameTextField.text
         navigationController?.pushViewController(followerCollectionlistVC, animated: true)
     }
-    
+}
 
-
+extension SearchFollowerVC: UITextFieldDelegate {
+    //リターンが押された時には、キーボードで入力された情報を渡しながら画面遷移を実行
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        pushFollowerCollectionListVC()
+        return true
+    }
 }
