@@ -17,7 +17,7 @@ class FollowerCollectionListVC: UIViewController {
         
         NetworkManager.shared.getFollowers(for: userName, page: 1) { (followers, errorMessage) in
             guard let followers = followers else {
-                self.presentQTAlertOnMainView(title: "何かエラーが発生しています", message: errorMessage!, buttonTitle: "OK")
+                self.presentQTAlertOnMainView(title: "ユーザー名が無効です", message: errorMessage!.rawValue, buttonTitle: "OK")
                 return
             }
             
@@ -32,8 +32,6 @@ class FollowerCollectionListVC: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
-    
-
  
 
 }

@@ -6,4 +6,12 @@
 //  Copyright © 2020 Hiroki. All rights reserved.
 //
 
+import Foundation
 
+enum QTError: String {
+    case invalidUsername = "このユーザー名は無効です"
+    case unableToComplete = "リクエストが完了しませんでした。"
+    case invalidResponse = "サーバーからのレスポンスが無効です。"
+    case invalidData = "サーバーからのデータが無効です。"
+    
+}

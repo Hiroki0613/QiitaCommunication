@@ -18,28 +18,28 @@ class NetworkManager {
     
     //参考URL
     //https://qiita.com/api/v2/users/qiita/followers?page=1&per_page=100
-    func getFollowers(for username: String, page: Int,completed: @escaping ([Follower]?, String?)-> Void) {
+    func getFollowers(for username: String, page: Int,completed: @escaping ([Follower]?, QTError?)-> Void) {
         let endpoint = baseURL + "\(username)/followers?page=\(page)&per_page=100"
         
         guard let url = URL(string: endpoint) else {
-            completed(nil, "このURLは無効です、もう一度確認してください")
+            completed(nil, QTError.invalidUsername)
             return
         }
         
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
         
             if let _ = error {
-                completed(nil, "リクエストが完了しませんでした。もう一度確認してください")
+                completed(nil, QTError.unableToComplete)
                 return
             }
             
             guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                completed(nil, "サーバーからのレスポンスが無効です。もう一度確認してください")
+                completed(nil, QTError.invalidResponse)
                 return
             }
             
             guard let data = data else {
-                completed(nil, "サーバーからのデータが無効です。もう一度確認してください")
+                completed(nil, QTError.invalidData)
                 return
             }
             
@@ -50,7 +50,7 @@ class NetworkManager {
                 let followers = try decoder.decode([Follower].self, from: data)
                 completed(followers, nil)
             } catch {
-                completed(nil,"サーバーから受け取ったデータは無効です。もう一度確認してください")
+                completed(nil,QTError.invalidData)
             }
         }
         task.resume()
