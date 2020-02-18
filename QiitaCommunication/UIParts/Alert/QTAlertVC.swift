@@ -41,6 +41,7 @@ class QTAlertVC: UIViewController {
         view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.77)
         configureContainerView()
         configureTitleLabel()
+        configureMessageLabel()
     }
     
     func configureContainerView() {
@@ -69,6 +70,19 @@ class QTAlertVC: UIViewController {
             titleLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: padding),
             titleLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -padding),
             titleLabel.heightAnchor.constraint(equalToConstant: 30)
+        ])
+    }
+    
+    func configureMessageLabel() {
+        containerView.addSubview(messageLabel)
+        messageLabel.text = message ?? "情報無し"
+        messageLabel.numberOfLines = 3
+        
+        NSLayoutConstraint.activate([
+            messageLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
+            messageLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: padding),
+            messageLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -padding),
+            messageLabel.heightAnchor.constraint(equalToConstant: 30)
         ])
     }
     
