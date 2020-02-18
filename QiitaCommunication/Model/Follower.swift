@@ -12,7 +12,9 @@ import Foundation
 //参考URL
 //https://qiita.com/api/v2/users/qiita/followers?page=1&per_page=100
 
-struct Follower: Codable {
+
+//codableとhashableで定義
+struct Follower: Codable, Hashable {
     var name: String
     var profileImageUrl: String
 }
