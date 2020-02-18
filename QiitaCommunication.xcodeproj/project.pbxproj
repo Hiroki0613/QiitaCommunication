@@ -22,7 +22,7 @@
 		7FAB119723FB90ED0075FD58 /* QTAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB119623FB90ED0075FD58 /* QTAlertVC.swift */; };
 		7FAB119A23FBA0540075FD58 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB119923FBA0540075FD58 /* Follower.swift */; };
 		7FAB119C23FBAA870075FD58 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB119B23FBAA870075FD58 /* NetworkManager.swift */; };
-		7FAB119F23FBAC890075FD58 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB119E23FBAC890075FD58 /* ErrorMessage.swift */; };
+		7FAB119F23FBAC890075FD58 /* QTError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB119E23FBAC890075FD58 /* QTError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +43,7 @@
 		7FAB119623FB90ED0075FD58 /* QTAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTAlertVC.swift; sourceTree = "<group>"; };
 		7FAB119923FBA0540075FD58 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
 		7FAB119B23FBAA870075FD58 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		7FAB119E23FBAC890075FD58 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
+		7FAB119E23FBAC890075FD58 /* QTError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,7 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				7FAB119B23FBAA870075FD58 /* NetworkManager.swift */,
-				7FAB119E23FBAC890075FD58 /* ErrorMessage.swift */,
+				7FAB119E23FBAC890075FD58 /* QTError.swift */,
 			);
 			path = " Network";
 			sourceTree = "<group>";
@@ -263,7 +263,7 @@
 				7FAB118E23FACBA20075FD58 /* QTTextField.swift in Sources */,
 				7FAB118623FAC4F50075FD58 /* QTTitleLabel.swift in Sources */,
 				7FAB119023FB8D7F0075FD58 /* FollowerCollectionListVC.swift in Sources */,
-				7FAB119F23FBAC890075FD58 /* ErrorMessage.swift in Sources */,
+				7FAB119F23FBAC890075FD58 /* QTError.swift in Sources */,
 				7FAB119A23FBA0540075FD58 /* Follower.swift in Sources */,
 				7FAB116923FABBB70075FD58 /* SceneDelegate.swift in Sources */,
 				7FAB117D23FABD910075FD58 /* FavoriteVC.swift in Sources */,
