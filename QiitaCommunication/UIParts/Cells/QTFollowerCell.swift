@@ -28,7 +28,7 @@ class QTFollowerCell: UICollectionViewCell {
     
     //cellForItemAtに入れる情報
     func set(follower: Follower) {
-        usernameLabel.text = follower.name
+        usernameLabel.text = follower.id
         avatarImageView.downLoadImage(from: follower.profileImageUrl)
     }
     

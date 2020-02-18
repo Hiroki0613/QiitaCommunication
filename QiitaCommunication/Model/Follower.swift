@@ -15,6 +15,7 @@ import Foundation
 
 //codableとhashableで定義
 struct Follower: Codable, Hashable {
-    var name: String
+//    var name: String
+    var id: String
     var profileImageUrl: String
 }
