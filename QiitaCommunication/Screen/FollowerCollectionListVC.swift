@@ -69,8 +69,10 @@ class FollowerCollectionListVC: UIViewController {
     }
     
     func getFollowers(username: String,page: Int) {
+        showLoadingView()
         NetworkManager.shared.getFollowers(for: userName, page: page) { (followers, errorMessage) in
             guard let followers = followers else {
+                self.dismissLoadingView()
                 self.presentQTAlertOnMainView(title: "ユーザー名が無効です", message: errorMessage!.rawValue, buttonTitle: "OK")
                 return
             }
