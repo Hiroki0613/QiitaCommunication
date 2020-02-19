@@ -18,6 +18,7 @@ class FollowerCollectionListVC: UIViewController {
     //userNameはSearchFollowerVCから受け取る
     var userName: String!
     var followers: [Follower] = []
+    var filteredFollowers: [Follower] = []
     
     //初期のフォロワー情報を取得するページを1と宣言
     var page = 1
@@ -74,6 +75,7 @@ class FollowerCollectionListVC: UIViewController {
         let searchController = UISearchController()
         searchController.searchResultsUpdater = self
         searchController.searchBar.placeholder = "フォロワーを絞り込みます"
+        searchController.obscuresBackgroundDuringPresentation = false
         navigationItem.searchController = searchController
     }
     
@@ -102,7 +104,7 @@ class FollowerCollectionListVC: UIViewController {
                 }
             }
             
-            self.initDataSource()
+            self.initDataSource(on: self.followers)
 
         }
     }
@@ -117,7 +119,7 @@ class FollowerCollectionListVC: UIViewController {
     }
     
     
-    func initDataSource() {
+    func initDataSource(on followers: [Follower]) {
         var snapshot = NSDiffableDataSourceSnapshot<Section, Follower>()
         /// セクションを登録、今回は一つ
         snapshot.appendSections([.main])
@@ -151,7 +153,11 @@ extension FollowerCollectionListVC: UICollectionViewDelegate {
 
 
 extension FollowerCollectionListVC:  UISearchResultsUpdating {
+    
     func updateSearchResults(for searchController: UISearchController) {
-        print("search")
+        guard let filter = searchController.searchBar.text, !filter.isEmpty else { return }
+        //$0はfollowerの行列を表す、小文字を単体と認識してフィルターをかける。合致しているものをfilteredFollowersに入れる
+        filteredFollowers = followers.filter { $0.id.lowercased().contains(filter.lowercased())}
+        initDataSource(on: filteredFollowers)
     }
 }
