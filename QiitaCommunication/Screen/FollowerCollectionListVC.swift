@@ -72,16 +72,26 @@ class FollowerCollectionListVC: UIViewController {
         showLoadingView()
         NetworkManager.shared.getFollowers(for: userName, page: page) { (followers, errorMessage) in
             guard let followers = followers else {
-                self.dismissLoadingView()
+               
                 self.presentQTAlertOnMainView(title: "ユーザー名が無効です", message: errorMessage!.rawValue, buttonTitle: "OK")
                 return
             }
+             self.dismissLoadingView()
             
             if followers.count < 100 {
                 self.hasMoreFollowers = false
             }
             
             self.followers.append(contentsOf: followers)
+            
+            if self.followers.isEmpty {
+                let message = "このユーザーには\nフォロワーがいません"
+                DispatchQueue.main.async {
+                    self.showEmptyStateView(with: message, in: self.view)
+                    return
+                }
+            }
+            
             self.initDataSource()
 
         }
