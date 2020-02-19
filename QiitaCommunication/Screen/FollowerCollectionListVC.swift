@@ -31,6 +31,7 @@ class FollowerCollectionListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        configureSearchController()
         configureCollectionView()
         getFollowers(username: userName, page: page)
         configureDataSource()
@@ -67,6 +68,15 @@ class FollowerCollectionListVC: UIViewController {
         
         return flowLayout
     }
+    
+    
+    func configureSearchController() {
+        let searchController = UISearchController()
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.placeholder = "フォロワーを絞り込みます"
+        navigationItem.searchController = searchController
+    }
+    
     
     func getFollowers(username: String,page: Int) {
         showLoadingView()
@@ -136,5 +146,12 @@ extension FollowerCollectionListVC: UICollectionViewDelegate {
             page = page + 1
             getFollowers(username: userName, page: page)
         }
+    }
+}
+
+
+extension FollowerCollectionListVC:  UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        print("search")
     }
 }
