@@ -46,4 +46,11 @@ extension UIViewController {
         
         activityIndicator.startAnimating()
     }
+    
+    
+    //インジケータ消去
+    func dismissLoadingView() {
+        containerView.removeFromSuperview()
+        containerView = nil
+    }
 }
