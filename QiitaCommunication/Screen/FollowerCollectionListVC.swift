@@ -74,6 +74,7 @@ class FollowerCollectionListVC: UIViewController {
     func configureSearchController() {
         let searchController = UISearchController()
         searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
         searchController.searchBar.placeholder = "フォロワーを絞り込みます"
         searchController.obscuresBackgroundDuringPresentation = false
         navigationItem.searchController = searchController
@@ -152,12 +153,16 @@ extension FollowerCollectionListVC: UICollectionViewDelegate {
 }
 
 
-extension FollowerCollectionListVC:  UISearchResultsUpdating {
+extension FollowerCollectionListVC:  UISearchResultsUpdating,UISearchBarDelegate {
     
     func updateSearchResults(for searchController: UISearchController) {
         guard let filter = searchController.searchBar.text, !filter.isEmpty else { return }
         //$0はfollowerの行列を表す、小文字を単体と認識してフィルターをかける。合致しているものをfilteredFollowersに入れる
         filteredFollowers = followers.filter { $0.id.lowercased().contains(filter.lowercased())}
         initDataSource(on: filteredFollowers)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        initDataSource(on: followers)
     }
 }
