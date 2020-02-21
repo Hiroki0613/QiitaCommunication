@@ -19,6 +19,7 @@ class FollowerCollectionListVC: UIViewController {
     var userName: String!
     var followers: [Follower] = []
     var filteredFollowers: [Follower] = []
+    var isSearching = false
     
     //初期のフォロワー情報を取得するページを1と宣言
     var page = 1
@@ -150,6 +151,11 @@ extension FollowerCollectionListVC: UICollectionViewDelegate {
             getFollowers(username: userName, page: page)
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let activeArray = isSearching ? filteredFollowers : followers
+        let follower = activeArray[indexPath.item]
+    }
 }
 
 
@@ -157,12 +163,14 @@ extension FollowerCollectionListVC:  UISearchResultsUpdating,UISearchBarDelegate
     
     func updateSearchResults(for searchController: UISearchController) {
         guard let filter = searchController.searchBar.text, !filter.isEmpty else { return }
+        isSearching = true
         //$0はfollowerの行列を表す、小文字を単体と認識してフィルターをかける。合致しているものをfilteredFollowersに入れる
         filteredFollowers = followers.filter { $0.id.lowercased().contains(filter.lowercased())}
         initDataSource(on: filteredFollowers)
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        isSearching = false
         initDataSource(on: followers)
     }
 }
