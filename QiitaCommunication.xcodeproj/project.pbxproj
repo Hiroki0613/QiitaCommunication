@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7F4D6C8123FD68DB00B1B094 /* QTEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4D6C8023FD68DB00B1B094 /* QTEmptyStateView.swift */; };
 		7F4D6C8924001E4C00B1B094 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4D6C8824001E4C00B1B094 /* User.swift */; };
+		7F4D6C8B2400236B00B1B094 /* UserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4D6C8A2400236B00B1B094 /* UserInfoVC.swift */; };
 		7FAB116723FABBB70075FD58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB116623FABBB70075FD58 /* AppDelegate.swift */; };
 		7FAB116923FABBB70075FD58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB116823FABBB70075FD58 /* SceneDelegate.swift */; };
 		7FAB117023FABBB90075FD58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FAB116F23FABBB90075FD58 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		7F4D6C8023FD68DB00B1B094 /* QTEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTEmptyStateView.swift; sourceTree = "<group>"; };
 		7F4D6C8824001E4C00B1B094 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7F4D6C8A2400236B00B1B094 /* UserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVC.swift; sourceTree = "<group>"; };
 		7FAB116323FABBB70075FD58 /* QiitaCommunication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QiitaCommunication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FAB116623FABBB70075FD58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FAB116823FABBB70075FD58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				7FAB117A23FABD540075FD58 /* SearchFollowerVC.swift */,
 				7FAB118F23FB8D7F0075FD58 /* FollowerCollectionListVC.swift */,
 				7FAB117C23FABD910075FD58 /* FavoriteVC.swift */,
+				7F4D6C8A2400236B00B1B094 /* UserInfoVC.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				7FAB119F23FBAC890075FD58 /* QTError.swift in Sources */,
 				7FAB119A23FBA0540075FD58 /* Follower.swift in Sources */,
 				7FAB116923FABBB70075FD58 /* SceneDelegate.swift in Sources */,
+				7F4D6C8B2400236B00B1B094 /* UserInfoVC.swift in Sources */,
 				7F4D6C8123FD68DB00B1B094 /* QTEmptyStateView.swift in Sources */,
 				7F4D6C8924001E4C00B1B094 /* User.swift in Sources */,
 				7FAB117D23FABD910075FD58 /* FavoriteVC.swift in Sources */,
