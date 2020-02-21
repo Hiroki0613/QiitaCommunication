@@ -17,8 +17,17 @@ class UserInfoVC: UIViewController {
         view.backgroundColor = .systemBackground
         let doneButton = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(dismissVC))
         navigationItem.rightBarButtonItem = doneButton
-
-        print(username!)
+        
+        
+        NetworkManager.shared.getUsersInfo(for: username) { (user, errorMessage) in
+            guard let user = user else {
+                self.presentQTAlertOnMainView(title: "ユーザー名が無効です", message: errorMessage!.rawValue, buttonTitle: "OK")
+                return
+            }
+            print(user)
+    
+        }
+        
 
     }
     
