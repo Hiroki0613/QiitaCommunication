@@ -12,8 +12,15 @@ class UserInfoVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemPink
+        view.backgroundColor = .systemBackground
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(dismissVC))
+        navigationItem.rightBarButtonItem = doneButton
 
+
+    }
+    
+    @objc func dismissVC() {
+        dismiss(animated: true, completion: nil)
     }
     
 
