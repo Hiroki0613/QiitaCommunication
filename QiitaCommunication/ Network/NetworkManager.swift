@@ -62,8 +62,8 @@ class NetworkManager {
     //参考URL
     //https://qiita.com/api/v2/users/qiita
     func getUsersInfo(for username: String,completed: @escaping (User?, QTError?)-> Void) {
-//        let endpoint = baseURL + "\(username)"
-        let endpoint = "https://qiita.com/api/v2/users/qiita"
+        let endpoint = baseURL + "\(username)"
+//        let endpoint = "https://qiita.com/api/v2/users/qiita"
         
         guard let url = URL(string: endpoint) else {
             completed(nil, QTError.invalidUsername)
