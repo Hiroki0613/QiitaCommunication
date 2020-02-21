@@ -15,13 +15,13 @@ import Foundation
 struct User: Codable{
     var id: String
     var profileImageUrl: String
-    var name: String?
-    var location: String?
-    var description: String?
-    var itemsCount: Int
-    var permanentID: Int
-    var websiteUrl: String
-    var followersCount: String
-    var followeesCount: String
+//    var name: String?
+//    var location: String?
+//    var description: String?
+//    var itemsCount: Int
+//    var permanentID: Int
+//    var websiteUrl: String
+//    var followersCount: String
+//    var followeesCount: String
     
 }
