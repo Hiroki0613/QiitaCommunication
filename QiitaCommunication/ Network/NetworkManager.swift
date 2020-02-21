@@ -59,4 +59,45 @@ class NetworkManager {
     }
     
     
+    //参考URL
+    //https://qiita.com/api/v2/users/qiita
+    func getUsers(for username: String,completed: @escaping (User?, QTError?)-> Void) {
+        let endpoint = baseURL + "\(username)"
+        
+        guard let url = URL(string: endpoint) else {
+            completed(nil, QTError.invalidUsername)
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            
+            if let _ = error {
+                completed(nil, QTError.unableToComplete)
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                completed(nil, QTError.invalidResponse)
+                return
+            }
+            
+            guard let data = data else {
+                completed(nil, QTError.invalidData)
+                return
+            }
+            
+            do {
+                let decoder = JSONDecoder()
+                //キャメルケース→キャメルケースに変更
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let user = try decoder.decode(User.self, from: data)
+                completed(user, nil)
+            } catch {
+                completed(nil,QTError.invalidData)
+            }
+        }
+        task.resume()
+    }
+    
+    
 }

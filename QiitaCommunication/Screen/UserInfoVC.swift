@@ -9,6 +9,8 @@
 import UIKit
 
 class UserInfoVC: UIViewController {
+    
+    var username: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,6 +18,7 @@ class UserInfoVC: UIViewController {
         let doneButton = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(dismissVC))
         navigationItem.rightBarButtonItem = doneButton
 
+        print(username!)
 
     }
     
