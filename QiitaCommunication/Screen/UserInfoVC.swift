@@ -41,6 +41,8 @@ class UserInfoVC: UIViewController {
             }
             DispatchQueue.main.async {
                 self.add(childVC: QTUserInfoHeaderVC(user: user), to: self.headerView)
+                self.add(childVC: QTItemsCountVC(user: user), to: self.itemViewOne)
+                self.add(childVC: QTFollowerItemVC(user: user), to: self.itemViewTwo)
             }
         }
     }
@@ -60,9 +62,6 @@ class UserInfoVC: UIViewController {
                 itemView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding)
             ])
         }
-        
-        itemViewOne.backgroundColor = .systemPink
-        itemViewTwo.backgroundColor = .systemBlue
   
         NSLayoutConstraint.activate([
             headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
