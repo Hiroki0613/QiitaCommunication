@@ -54,6 +54,14 @@ class QTItemInfoVC: UIViewController {
     }
     
     
+    private func configureActionButton() {
+        actionButton.addTarget(self, action: #selector(actionButtonTapped), for: .touchUpInside)
+    }
+    
+    //ItemCountVC,FollowerItemVCにて継承して使用
+    @objc func actionButtonTapped() {}
+    
+    
     private func layoutUI() {
         view.addSubview(stackView)
         view.addSubview(actionButton)
