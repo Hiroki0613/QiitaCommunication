@@ -22,6 +22,7 @@ class UserInfoVC: UIViewController {
     var itemViews: [UIView] = []
     
     var username: String!
+    var delegate: FollowerCollectionListVCDelegate!
 
     
     override func viewDidLoad() {
