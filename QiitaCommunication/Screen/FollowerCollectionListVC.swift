@@ -87,32 +87,34 @@ class FollowerCollectionListVC: UIViewController {
     }
     
     
+    
+    
     func getFollowers(username: String,page: Int) {
         showLoadingView()
-        NetworkManager.shared.getFollowers(for: userName, page: page) { (followers, errorMessage) in
-            guard let followers = followers else {
-               
-                self.presentQTAlertOnMainView(title: "ユーザー名が無効です", message: errorMessage!.rawValue, buttonTitle: "OK")
-                return
-            }
-             self.dismissLoadingView()
+        NetworkManager.shared.getFollowers(for: userName, page: page) { result in
             
-            if followers.count < 100 {
-                self.hasMoreFollowers = false
-            }
-            
-            self.followers.append(contentsOf: followers)
-            
-            if self.followers.isEmpty {
-                let message = "このユーザーには\nフォロワーがいません"
-                DispatchQueue.main.async {
-                    self.showEmptyStateView(with: message, in: self.view)
-                    return
+            switch result {
+            case .success(let followers):
+                self.dismissLoadingView()
+                
+                if followers.count < 100 {
+                    self.hasMoreFollowers = false
                 }
+                
+                self.followers.append(contentsOf: followers)
+                
+                if self.followers.isEmpty {
+                    let message = "このユーザーには\nフォロワーがいません"
+                    DispatchQueue.main.async {
+                        self.showEmptyStateView(with: message, in: self.view)
+                        return
+                    }
+                }
+                self.initDataSource(on: self.followers)
+                
+            case .failure(let error):
+                self.presentQTAlertOnMainView(title: "ユーザー名が無効です", message: error.rawValue, buttonTitle: "OK")
             }
-            
-            self.initDataSource(on: self.followers)
-
         }
     }
     

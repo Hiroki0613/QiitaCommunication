@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum QTError: String {
+enum QTError: String, Error {
     case invalidUsername = "このユーザー名は無効です"
     case unableToComplete = "リクエストが完了しませんでした。"
     case invalidResponse = "サーバーからのレスポンスが無効です。"

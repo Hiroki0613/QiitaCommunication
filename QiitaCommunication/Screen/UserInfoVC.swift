@@ -41,13 +41,15 @@ class UserInfoVC: UIViewController {
     
     
     func getUserInfo() {
-        NetworkManager.shared.getUsersInfo(for: username) { (user, errorMessage) in
-            guard let user = user else {
-                self.presentQTAlertOnMainView(title: "ユーザー名が無効です", message: errorMessage!.rawValue, buttonTitle: "OK")
-                return
-            }
-            DispatchQueue.main.async {
-                self.configureUIElements(with: user)
+        NetworkManager.shared.getUsersInfo(for: username) { result in
+            
+            switch result {
+            case .success(let user):
+                DispatchQueue.main.async {
+                    self.configureUIElements(with: user)
+                }
+            case .failure(let error):
+                self.presentQTAlertOnMainView(title: "ユーザー名が無効です", message: error.rawValue, buttonTitle: "OK")
             }
         }
     }

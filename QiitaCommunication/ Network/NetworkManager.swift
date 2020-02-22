@@ -20,28 +20,28 @@ class NetworkManager {
     
     //参考URL
     //https://qiita.com/api/v2/users/qiita/followers?page=1&per_page=100
-    func getFollowers(for username: String, page: Int,completed: @escaping ([Follower]?, QTError?)-> Void) {
+    func getFollowers(for username: String, page: Int,completed: @escaping (Result<[Follower], QTError>) -> Void) {
         let endpoint = baseURL + "\(username)/followers?page=\(page)&per_page=100"
         
         guard let url = URL(string: endpoint) else {
-            completed(nil, QTError.invalidUsername)
+            completed(.failure(.invalidUsername))
             return
         }
         
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
         
             if let _ = error {
-                completed(nil, QTError.unableToComplete)
+                completed(.failure(.unableToComplete))
                 return
             }
             
             guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                completed(nil, QTError.invalidResponse)
+                completed(.failure(.invalidResponse))
                 return
             }
             
             guard let data = data else {
-                completed(nil, QTError.invalidData)
+                completed(.failure(.invalidData))
                 return
             }
             
@@ -50,9 +50,9 @@ class NetworkManager {
                 //キャメルケース→キャメルケースに変更
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 let followers = try decoder.decode([Follower].self, from: data)
-                completed(followers, nil)
+                completed(.success(followers))
             } catch {
-                completed(nil,QTError.invalidData)
+                completed(.failure(.invalidData))
             }
         }
         task.resume()
@@ -61,29 +61,29 @@ class NetworkManager {
     
     //参考URL
     //https://qiita.com/api/v2/users/qiita
-    func getUsersInfo(for username: String,completed: @escaping (User?, QTError?)-> Void) {
+    func getUsersInfo(for username: String,completed: @escaping (Result<User, QTError>) -> Void) {
         let endpoint = baseURL + "\(username)"
 //        let endpoint = "https://qiita.com/api/v2/users/qiita"
         
         guard let url = URL(string: endpoint) else {
-            completed(nil, QTError.invalidUsername)
+            completed(.failure(.invalidUsername))
             return
         }
         
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             
             if let _ = error {
-                completed(nil, QTError.unableToComplete)
+                completed(.failure(.unableToComplete))
                 return
             }
             
             guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                completed(nil, QTError.invalidResponse)
+                completed(.failure(.invalidResponse))
                 return
             }
             
             guard let data = data else {
-                completed(nil, QTError.invalidData)
+                completed(.failure(.invalidData))
                 return
             }
             
@@ -92,9 +92,9 @@ class NetworkManager {
                 //キャメルケース→キャメルケースに変更
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 let user = try decoder.decode(User.self, from: data)
-                completed(user, nil)
+                completed(.success(user))
             } catch {
-                completed(nil,QTError.invalidData)
+                completed(.failure(.invalidData))
             }
         }
         task.resume()
