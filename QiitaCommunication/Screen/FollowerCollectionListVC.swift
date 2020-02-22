@@ -164,16 +164,19 @@ class FollowerCollectionListVC: UIViewController {
                 
                 PresistenceManager.updateWith(favorite: favorite, actionType: .add) { [weak self] error in
                     guard let self = self else { return }
+                    print("hirohiro1")
                     
                     guard let error = error else {
-                        self.presentQTAlertOnMainView(title: "成功", message: "ユーザーをお気に入りに追加しました", buttonTitle: "OK")
+                        print("hirohiro2")
+//                        self.presentQTAlertOnMainView(title: "成功", message: "ユーザーをお気に入りに追加しました", buttonTitle: "OK")
                         return
                     }
-                    
-                    self.presentQTAlertOnMainView(title: "問題が発生しました", message: error.rawValue, buttonTitle: "OK")
+                    print("hirohiro3")
+//                    self.presentQTAlertOnMainView(title: "問題が発生しました", message: error.rawValue, buttonTitle: "OK")
                     
                 }
             case .failure(let error):
+                print("テスト")
                 self.presentQTAlertOnMainView(title: "問題が発生しました", message: error.rawValue, buttonTitle: "OK")
             }
         }
