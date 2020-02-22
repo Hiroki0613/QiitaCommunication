@@ -14,6 +14,13 @@ class QTItemInfoVC: UIViewController {
     let itemInfoViewOne = QTItemInfoView()
     let itemInfoViewTwo = QTItemInfoView()
     let actionButton = QTButton()
+    
+    var user: User!
+    
+    init(user: User) {
+        super.init(nibName: nil, bundle: nil)
+        self.user = user
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

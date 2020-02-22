@@ -10,4 +10,13 @@ import UIKit
 
 class QTItemsCountVC: QTItemInfoVC {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureItems()
+    }
+    
+    
+    private func configureItems() {
+        itemInfoViewOne.set(itemInfoType: .itemsCount, withCount: user)
+    }
 }
