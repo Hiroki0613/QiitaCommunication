@@ -47,7 +47,7 @@ class QTUserInfoHeaderVC: UIViewController {
         bioLabel.text = user.description ?? ""
         bioLabel.numberOfLines = 3
         
-        locationImageView.image = UIImage(systemName: "mappin.and.ellipse")
+        locationImageView.image = UIImage(systemName: QTSymbols.location)
     }
     
 
