@@ -19,7 +19,7 @@ class QTFollowerItemVC: QTItemInfoVC {
     private func configureItems() {
         itemInfoViewOne.set(itemInfoType: .followers, withCount: user.followersCount)
         itemInfoViewTwo.set(itemInfoType: .following, withCount: user.followeesCount)
-        actionButton.set(backgroundColor: .systemGreen, title: "Get Followers")
+        actionButton.set(backgroundColor: .systemGreen, title: "フォロワーを見る")
     }
 }
 
