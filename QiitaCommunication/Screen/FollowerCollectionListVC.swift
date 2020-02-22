@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol FollowerCollectionListVCDelegate {
+    func didRequestFollowers(for username: String)
+}
+
+
 class FollowerCollectionListVC: UIViewController {
     
     //セクションの数を定義
@@ -178,4 +183,12 @@ extension FollowerCollectionListVC:  UISearchResultsUpdating,UISearchBarDelegate
         isSearching = false
         initDataSource(on: followers)
     }
+}
+
+
+extension FollowerCollectionListVC: FollowerCollectionListVCDelegate {
+    func didRequestFollowers(for username: String) {
+        //フォロワー一覧のリストを表示
+    }
+    
 }

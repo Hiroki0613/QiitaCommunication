@@ -116,6 +116,7 @@ extension UserInfoVC: UserInfoVCDelegate {
             return
         }
        
+        //safariでqiitaのプロフィールページを表示
         let safariVC = SFSafariViewController(url: qiitaProfileURL)
         safariVC.preferredControlTintColor = .systemBlue
         present(safariVC, animated: true, completion: nil)
