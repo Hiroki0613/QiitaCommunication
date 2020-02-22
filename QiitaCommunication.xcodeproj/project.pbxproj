@@ -14,6 +14,7 @@
 		7F4D6C902400BF5800B1B094 /* QTUserInfoHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4D6C8F2400BF5800B1B094 /* QTUserInfoHeaderVC.swift */; };
 		7F4D6C922400C52200B1B094 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4D6C912400C52200B1B094 /* Constants.swift */; };
 		7F4D6C942400D36C00B1B094 /* QTItemInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4D6C932400D36C00B1B094 /* QTItemInfoView.swift */; };
+		7F4D6C962400DAB100B1B094 /* QTItemInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4D6C952400DAB100B1B094 /* QTItemInfoVC.swift */; };
 		7FAB116723FABBB70075FD58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB116623FABBB70075FD58 /* AppDelegate.swift */; };
 		7FAB116923FABBB70075FD58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB116823FABBB70075FD58 /* SceneDelegate.swift */; };
 		7FAB117023FABBB90075FD58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FAB116F23FABBB90075FD58 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 		7F4D6C8F2400BF5800B1B094 /* QTUserInfoHeaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTUserInfoHeaderVC.swift; sourceTree = "<group>"; };
 		7F4D6C912400C52200B1B094 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7F4D6C932400D36C00B1B094 /* QTItemInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTItemInfoView.swift; sourceTree = "<group>"; };
+		7F4D6C952400DAB100B1B094 /* QTItemInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTItemInfoVC.swift; sourceTree = "<group>"; };
 		7FAB116323FABBB70075FD58 /* QiitaCommunication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QiitaCommunication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FAB116623FABBB70075FD58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FAB116823FABBB70075FD58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			children = (
 				7FAB119623FB90ED0075FD58 /* QTAlertVC.swift */,
 				7F4D6C8F2400BF5800B1B094 /* QTUserInfoHeaderVC.swift */,
+				7F4D6C952400DAB100B1B094 /* QTItemInfoVC.swift */,
 			);
 			path = " ViewControllers";
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				7F4D6C8924001E4C00B1B094 /* User.swift in Sources */,
 				7FAB117D23FABD910075FD58 /* FavoriteVC.swift in Sources */,
 				7FAB118823FAC8A60075FD58 /* QTBodyLabel.swift in Sources */,
+				7F4D6C962400DAB100B1B094 /* QTItemInfoVC.swift in Sources */,
 				7FAB118B23FACA930075FD58 /* QTButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
