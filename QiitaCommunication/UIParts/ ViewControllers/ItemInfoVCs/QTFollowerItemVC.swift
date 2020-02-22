@@ -21,5 +21,9 @@ class QTFollowerItemVC: QTItemInfoVC {
         itemInfoViewTwo.set(itemInfoType: .following, withCount: user.followeesCount)
         actionButton.set(backgroundColor: .systemGreen, title: "フォロワーを見る")
     }
+    
+    override func actionButtonTapped() {
+        delegate.didTapGetFollowers(for: user)
+    }
 }
 

@@ -189,7 +189,14 @@ extension FollowerCollectionListVC:  UISearchResultsUpdating,UISearchBarDelegate
 
 extension FollowerCollectionListVC: FollowerCollectionListVCDelegate {
     func didRequestFollowers(for username: String) {
-        //フォロワー一覧のリストを表示
+        //これまでの情報を全てリセットして、フォロワー一覧のリストを表示
+        self.userName = username
+        title = username
+        page = 1
+        followers.removeAll()
+        filteredFollowers.removeAll()
+        qtCollectionView.setContentOffset(.zero, animated: true)
+        getFollowers(username: username, page: page)
     }
     
 }
