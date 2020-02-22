@@ -35,10 +35,11 @@ class QTUserInfoHeaderVC: UIViewController {
         super.viewDidLoad()
         addSubview()
         layoutUI()
+        configureUIElement()
     }
     
     
-    func cofigureUIElement() {
+    func configureUIElement() {
         avatarImageView.downLoadImage(from: user.profileImageUrl)
         usernameLabel.text = user.id
         //user.nameはnilの可能性がある
