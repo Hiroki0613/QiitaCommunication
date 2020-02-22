@@ -47,7 +47,8 @@ class QTUserInfoHeaderVC: UIViewController {
         bioLabel.text = user.description ?? ""
         bioLabel.numberOfLines = 3
         
-        locationImageView.image = UIImage(systemName: QTSymbols.location)
+        locationImageView.image = UIImage(systemName: SFsymbols.location)
+        locationImageView.tintColor = .secondaryLabel
     }
     
 

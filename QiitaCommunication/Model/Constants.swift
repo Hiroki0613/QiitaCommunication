@@ -8,8 +8,8 @@
 
 import Foundation
 
-enum QTSymbols {
+enum SFsymbols {
     
-    //QTSymbols()といったインスタンスを避けるため、case無しのタイププロパティを設定
+    //SFSymbols()といったインスタンスを避けるため、case無しのタイププロパティを設定
     static let location = "mappin.and.ellipse"
 }
