@@ -13,5 +13,7 @@ enum QTError: String, Error {
     case unableToComplete = "リクエストが完了しませんでした。"
     case invalidResponse = "サーバーからのレスポンスが無効です。"
     case invalidData = "サーバーからのデータが無効です。"
+    case unableToFavorite = "お気に入りに追加する際にエラーが発生しました"
+    case alreadyInFavorites = "すでにお気に入りに入っています"
     
 }
