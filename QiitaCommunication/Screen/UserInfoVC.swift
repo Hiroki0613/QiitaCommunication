@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import SafariServices
 
 protocol UserInfoVCDelegate {
-    func didTapQiitaProfile()
-    func didTapGetFollowers()
+    func didTapQiitaProfile(for user: User)
+    func didTapGetFollowers(for user: User)
 }
 
 class UserInfoVC: UIViewController {
@@ -108,15 +109,18 @@ class UserInfoVC: UIViewController {
 
 
 extension UserInfoVC: UserInfoVCDelegate {
-    func didTapQiitaProfile() {
-    print("button tapped")
-        
+    func didTapQiitaProfile(for user: User) {
+        let qiitaProfileString = "https://qiita.com/\(user.id)"
+        guard let qiitaProfileURL = URL(string: qiitaProfileString) else {
+            presentQTAlertOnMainView(title: "無効URL", message: "このユーザーアカウントは無効です", buttonTitle: "OK")
+            return
+        }
+       
+        let safariVC = SFSafariViewController(url: qiitaProfileURL)
+        safariVC.preferredControlTintColor = .systemBlue
+        present(safariVC, animated: true, completion: nil)
     }
     
-    func didTapGetFollowers() {
-        //dissmissVC
-        //tell follower list screen the new user
+    func didTapGetFollowers(for user: User) {
     }
-    
-    
 }

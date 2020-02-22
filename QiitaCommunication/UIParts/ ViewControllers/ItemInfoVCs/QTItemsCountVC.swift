@@ -23,6 +23,6 @@ class QTItemsCountVC: QTItemInfoVC {
     }
     
     override func actionButtonTapped() {
-        delegate.didTapQiitaProfile()
+        delegate.didTapQiitaProfile(for: user)
     }
 }
