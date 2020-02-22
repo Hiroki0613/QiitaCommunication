@@ -13,6 +13,7 @@
 		7F4D6C8D2400BE3100B1B094 /* QTSecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4D6C8C2400BE3100B1B094 /* QTSecondaryTitleLabel.swift */; };
 		7F4D6C902400BF5800B1B094 /* QTUserInfoHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4D6C8F2400BF5800B1B094 /* QTUserInfoHeaderVC.swift */; };
 		7F4D6C922400C52200B1B094 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4D6C912400C52200B1B094 /* Constants.swift */; };
+		7F4D6C942400D36C00B1B094 /* QTItemInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4D6C932400D36C00B1B094 /* QTItemInfoView.swift */; };
 		7FAB116723FABBB70075FD58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB116623FABBB70075FD58 /* AppDelegate.swift */; };
 		7FAB116923FABBB70075FD58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAB116823FABBB70075FD58 /* SceneDelegate.swift */; };
 		7FAB117023FABBB90075FD58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FAB116F23FABBB90075FD58 /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 		7F4D6C8C2400BE3100B1B094 /* QTSecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTSecondaryTitleLabel.swift; sourceTree = "<group>"; };
 		7F4D6C8F2400BF5800B1B094 /* QTUserInfoHeaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTUserInfoHeaderVC.swift; sourceTree = "<group>"; };
 		7F4D6C912400C52200B1B094 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7F4D6C932400D36C00B1B094 /* QTItemInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTItemInfoView.swift; sourceTree = "<group>"; };
 		7FAB116323FABBB70075FD58 /* QiitaCommunication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QiitaCommunication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FAB116623FABBB70075FD58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FAB116823FABBB70075FD58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				7F4D6C8023FD68DB00B1B094 /* QTEmptyStateView.swift */,
+				7F4D6C932400D36C00B1B094 /* QTItemInfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				7FAB119723FB90ED0075FD58 /* QTAlertVC.swift in Sources */,
 				7F4D6C922400C52200B1B094 /* Constants.swift in Sources */,
 				7FAB116723FABBB70075FD58 /* AppDelegate.swift in Sources */,
+				7F4D6C942400D36C00B1B094 /* QTItemInfoView.swift in Sources */,
 				7F4D6C902400BF5800B1B094 /* QTUserInfoHeaderVC.swift in Sources */,
 				7FAB11A423FBCA7F0075FD58 /* QTFollowerCell.swift in Sources */,
 				7FAB117B23FABD540075FD58 /* SearchFollowerVC.swift in Sources */,
