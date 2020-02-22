@@ -167,17 +167,24 @@ class FollowerCollectionListVC: UIViewController {
                     print("hirohiro1")
                     
                     guard let error = error else {
-                        print("hirohiro2")
-//                        self.presentQTAlertOnMainView(title: "成功", message: "ユーザーをお気に入りに追加しました", buttonTitle: "OK")
+                        
+                        DispatchQueue.main.async {
+                            self.presentQTAlertOnMainView(title: "成功", message: "お気に入りに追加しました", buttonTitle: "OK")
+                        }
                         return
                     }
-                    print("hirohiro3")
-//                    self.presentQTAlertOnMainView(title: "問題が発生しました", message: error.rawValue, buttonTitle: "OK")
                     
+                    DispatchQueue.main.async {
+                        self.presentQTAlertOnMainView(title: "問題が発生しました", message: error.rawValue, buttonTitle: "OK")
+                    }
                 }
+                
             case .failure(let error):
                 print("テスト")
-                self.presentQTAlertOnMainView(title: "問題が発生しました", message: error.rawValue, buttonTitle: "OK")
+                
+                DispatchQueue.main.async {
+                    self.presentQTAlertOnMainView(title: "問題が発生しました", message: error.rawValue, buttonTitle: "OK")
+                }
             }
         }
     }
