@@ -128,7 +128,7 @@ extension UserInfoVC: UserInfoVCDelegate {
     
     func didTapGetFollowers(for user: User) {
         guard user.followersCount != 0 else {
-            presentQTAlertOnMainView(title: "No followers", message: "このアカウントにはフォロワーがいません", buttonTitle: "OK")
+            presentQTAlertOnMainView(title: "No followers", message: "フォロワーがいません", buttonTitle: "OK")
             return
         }
         delegate.didRequestFollowers(for: user.id)

@@ -164,7 +164,6 @@ class FollowerCollectionListVC: UIViewController {
                 
                 PresistenceManager.updateWith(favorite: favorite, actionType: .add) { [weak self] error in
                     guard let self = self else { return }
-                    print("hirohiro1")
                     
                     guard let error = error else {
                         
