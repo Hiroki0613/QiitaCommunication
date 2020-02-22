@@ -25,10 +25,7 @@ class UserInfoVC: UIViewController {
                 return
             }
             print(user)
-    
         }
-        
-
     }
     
     @objc func dismissVC() {
