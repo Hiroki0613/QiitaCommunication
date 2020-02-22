@@ -151,7 +151,32 @@ class FollowerCollectionListVC: UIViewController {
     }
     
     @objc func addButtonTapped() {
-        print("add button tapped")
+        
+        showLoadingView()
+        
+        NetworkManager.shared.getUsersInfo(for: userName) { [weak self] result in
+            guard let self = self else { return }
+            self.dismissLoadingView()
+            
+            switch result {
+            case .success(let user):
+                let favorite = Follower(id: user.id, profileImageUrl: user.profileImageUrl)
+                
+                PresistenceManager.updateWith(favorite: favorite, actionType: .add) { [weak self] error in
+                    guard let self = self else { return }
+                    
+                    guard let error = error else {
+                        self.presentQTAlertOnMainView(title: "成功", message: "ユーザーをお気に入りに追加しました", buttonTitle: "OK")
+                        return
+                    }
+                    
+                    self.presentQTAlertOnMainView(title: "問題が発生しました", message: error.rawValue, buttonTitle: "OK")
+                    
+                }
+            case .failure(let error):
+                self.presentQTAlertOnMainView(title: "問題が発生しました", message: error.rawValue, buttonTitle: "OK")
+            }
+        }
     }
 }
 
