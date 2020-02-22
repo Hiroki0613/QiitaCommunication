@@ -109,7 +109,7 @@ class UserInfoVC: UIViewController {
 
 extension UserInfoVC: UserInfoVCDelegate {
     func didTapQiitaProfile() {
-        //Show safari view controller
+    print("button tapped")
         
     }
     

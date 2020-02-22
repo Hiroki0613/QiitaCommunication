@@ -21,4 +21,8 @@ class QTItemsCountVC: QTItemInfoVC {
         itemInfoViewTwo.set(itemInfoType: .permanentId, withCount: user.permanentId)
         actionButton.set(backgroundColor: .systemPurple, title: "Qiita Profile")
     }
+    
+    override func actionButtonTapped() {
+        delegate.didTapQiitaProfile()
+    }
 }
