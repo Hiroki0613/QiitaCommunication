@@ -12,4 +12,8 @@ enum SFsymbols {
     
     //SFSymbols()といったインスタンスを避けるため、case無しのタイププロパティを設定
     static let location = "mappin.and.ellipse"
+    static let itemsCount = "folder"
+    static let permanentId = "person.crop.circle"
+    static let followers = "heart"
+    static let following = "person.2"
 }
