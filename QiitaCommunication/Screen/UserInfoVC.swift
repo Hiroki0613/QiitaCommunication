@@ -45,9 +45,16 @@ class UserInfoVC: UIViewController {
                 return
             }
             DispatchQueue.main.async {
+                
+                let itemCountVC = QTItemsCountVC(user: user)
+                itemCountVC.delegate = self
+                
+                let followerItemVC = QTFollowerItemVC(user: user)
+                followerItemVC.delegate = self
+                
                 self.add(childVC: QTUserInfoHeaderVC(user: user), to: self.headerView)
-                self.add(childVC: QTItemsCountVC(user: user), to: self.itemViewOne)
-                self.add(childVC: QTFollowerItemVC(user: user), to: self.itemViewTwo)
+                self.add(childVC: itemCountVC, to: self.itemViewOne)
+                self.add(childVC: followerItemVC, to: self.itemViewTwo)
             }
         }
     }
