@@ -19,6 +19,6 @@ class QTItemsCountVC: QTItemInfoVC {
     private func configureItems() {
         itemInfoViewOne.set(itemInfoType: .itemsCount, withCount: user.itemsCount)
         itemInfoViewTwo.set(itemInfoType: .permanentId, withCount: user.permanentId)
-        
+        actionButton.set(backgroundColor: .systemPurple, title: "Qiita Profile")
     }
 }

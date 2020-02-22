@@ -13,6 +13,7 @@ class QTItemInfoVC: UIViewController {
     let stackView = UIStackView()
     let itemInfoViewOne = QTItemInfoView()
     let itemInfoViewTwo = QTItemInfoView()
+    //外枠として使うため、個別のイニシャライズはしない。
     let actionButton = QTButton()
     
     var user: User!
@@ -21,7 +22,13 @@ class QTItemInfoVC: UIViewController {
         super.init(nibName: nil, bundle: nil)
         self.user = user
     }
-
+    
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureBackgroundView()
