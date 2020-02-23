@@ -21,6 +21,11 @@ class FavoriteVC: UIViewController {
     }
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getFavorites()
+    }
+    
     func configureViewController() {
         view.backgroundColor = .systemBackground
         title = "お気に入り"
@@ -40,12 +45,24 @@ class FavoriteVC: UIViewController {
     
     
     func getFavorites() {
-        PresistenceManager.retrieveFavorites { (result) in
+        PresistenceManager.retrieveFavorites { [weak self] result in
+            guard let self = self else { return }
+            
             switch result {
             case .success(let favorites):
-                self.favorites = favorites
+                //お気に入りが無い場合が０の時に表示
+                if favorites.isEmpty {
+                    self.showEmptyStateView(with: "お気に入りがありません\nフォロワーリストから追加してください。", in: self.view)
+                } else {
+                    self.favorites = favorites
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                        self.view.bringSubviewToFront(self.tableView)
+                    }
+                }
+                
             case .failure(let error):
-                break
+                self.presentQTAlertOnMainView(title: "問題が発生しましt", message: error.rawValue, buttonTitle: "OK")
             }
         }
     }
