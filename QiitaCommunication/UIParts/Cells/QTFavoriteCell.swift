@@ -39,6 +39,7 @@ class QTFavoriteCell: UITableViewCell {
         addSubview(avatarImageView)
         addSubview(usernameLabel)
         
+        accessoryType = .disclosureIndicator
         let padding: CGFloat = 12
         
         NSLayoutConstraint.activate([
