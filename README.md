@@ -9,19 +9,19 @@
 <br>
 <br>
 ## 工夫したところ
-・コミットを頻繁に行い、作成の流れを記録。
+　・コミットを頻繁に行い、作成の流れを記録。
 <br>
-・Result<Success,Failure:Error>型、UI部品実装のように参考になる箇所はevernoteに記載して自分のものにした。
+　・Result<Success,Failure:Error>型、UI部品実装のように参考になる箇所はevernoteに記載して自分のものにした。
 <br>
 <br>
 ## 苦労したところ
 
 ### 実装
-・[QiitaのAPIドキュメント](https://qiita.com/api/v2/docs)の確認 → 通信するModelの定義
+　・[QiitaのAPIドキュメント](https://qiita.com/api/v2/docs)の確認 → 通信するModelの定義
 <br>
-・初めて知るシンタックスの理解(Qiitaをメインに使っていました)
+　・初めて知るシンタックスの理解(Qiitaをメインに使っていました)
 <br>
-・NSLayoutConstraintの仕組みの理解(こちらはSean AllenさんのYouTubeチャンネルを利用)
+　・NSLayoutConstraintの仕組みの理解(こちらはSean AllenさんのYouTubeチャンネルを利用)
 
 ### エラー、バグ発生時
 一つ一つ実装するたびにビルドしていたので、大きなエラーは発生しなかったのですが、
