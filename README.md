@@ -17,7 +17,7 @@
 ## 苦労したところ
 
 ### 実装
-・APIドキュメントの確認 → 通信するModelの定義
+・[QiitaのAPIドキュメント](https://qiita.com/api/v2/docs)の確認 → 通信するModelの定義
 <br>
 ・初めて知るシンタックスの理解(Qiitaをメインに使っていました)
 <br>
