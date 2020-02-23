@@ -10,15 +10,49 @@ import UIKit
 
 class QTFavoriteCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+ //reuseIDを宣言
+   static let reuseID = "QTFavoriteCell"
+   
+    let avatarImageView = QTAvatarImageView(frame: .zero)
+    let usernameLabel = QTTitleLabel(textAlignment: .left, fontSize: 26)
+
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        configure()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-
+    
+    
+    //cellForRowAtに入れる情報
+    func set(favorite: Follower) {
+        usernameLabel.text = favorite.id
+        avatarImageView.downLoadImage(from: favorite.profileImageUrl)
+    }
+    
+    
+    private func configure() {
+        addSubview(avatarImageView)
+        addSubview(usernameLabel)
+        
+        let padding: CGFloat = 12
+        
+        NSLayoutConstraint.activate([
+            avatarImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            avatarImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: padding),
+            avatarImageView.heightAnchor.constraint(equalToConstant: 60),
+            avatarImageView.widthAnchor.constraint(equalToConstant: 60),
+            
+            usernameLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            usernameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 24),
+            usernameLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor , constant: -padding),
+            usernameLabel.heightAnchor.constraint(equalToConstant: 40)
+            
+        ])
+    }
+    
 }
